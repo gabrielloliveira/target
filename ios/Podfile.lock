@@ -64,6 +64,8 @@ PODS:
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
     - Yoga
+  - ExpoSQLite (16.0.8):
+    - ExpoModulesCore
   - FBLazyVector (0.81.4)
   - hermes-engine (0.81.4):
     - hermes-engine/Pre-built (= 0.81.4)
@@ -1826,6 +1828,7 @@ DEPENDENCIES:
   - ExpoLinearGradient (from `../node_modules/expo-linear-gradient/ios`)
   - ExpoLinking (from `../node_modules/expo-linking/ios`)
   - ExpoModulesCore (from `../node_modules/expo-modules-core`)
+  - ExpoSQLite (from `../node_modules/expo-sqlite/ios`)
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
   - hermes-engine (from `../node_modules/react-native/sdks/hermes-engine/hermes-engine.podspec`)
   - RCTDeprecation (from `../node_modules/react-native/ReactApple/Libraries/RCTFoundation/RCTDeprecation`)
@@ -1918,6 +1921,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/expo-linking/ios"
   ExpoModulesCore:
     :path: "../node_modules/expo-modules-core"
+  ExpoSQLite:
+    :path: "../node_modules/expo-sqlite/ios"
   FBLazyVector:
     :path: "../node_modules/react-native/Libraries/FBLazyVector"
   hermes-engine:
@@ -2069,6 +2074,7 @@ SPEC CHECKSUMS:
   ExpoLinearGradient: f9e7182e5253d53b2de4134b69d70bbfc2d50588
   ExpoLinking: f5c171877e118e792cb9a77e5ade0b080d899b14
   ExpoModulesCore: 271bdc09dcc9c07aff64339eafeabe125e12c650
+  ExpoSQLite: f9d1202877e12bfa78a58309a3977ee4ea0b1314
   FBLazyVector: 9e0cd874afd81d9a4d36679daca991b58b260d42
   hermes-engine: 35c763d57c9832d0eef764316ca1c4d043581394
   RCTDeprecation: 7487d6dda857ccd4cb3dd6ecfccdc3170e85dcbc
