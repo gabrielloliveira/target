@@ -68,6 +68,32 @@ export default function InProgress() {
     setIsFetching(false);
   }
 
+  function handleRemoveTransaction(id: string) {
+    try {
+      Alert.alert("Remover?", "Deseja realmente remover?", [
+        { text: "Cancelar", style: "cancel" },
+        {
+          text: "Remover",
+          style: "destructive",
+          onPress: () => transactionRemove(id),
+        },
+      ]);
+    } catch (error) {
+      console.log(error);
+      Alert.alert("Erro", "Não foi possível deletar a transação");
+    }
+  }
+
+  async function transactionRemove(id: string) {
+    try {
+      await transactionDatabase.deleteById(Number(id));
+      fetchData();
+    } catch (error) {
+      console.log(error);
+      Alert.alert("Erro", "Erro ao deletar a transação");
+    }
+  }
+
   useFocusEffect(
     useCallback(() => {
       fetchData();
@@ -96,7 +122,10 @@ export default function InProgress() {
         title="Transações"
         data={transactions}
         renderItem={({ item }) => (
-          <Transaction data={item} onRemove={() => {}} />
+          <Transaction
+            data={item}
+            onRemove={() => handleRemoveTransaction(item.id)}
+          />
         )}
         emptyMessage="Nenhuma transação. Toque em nova transação para guardar seu primeiro dinheiro aqui."
       />
