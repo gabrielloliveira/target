@@ -80,10 +80,15 @@ export function useTargetDatabase() {
     });
   }
 
+  async function deleteById(id: number) {
+    await database.runAsync("DELETE FROM targets WHERE id = ?", id);
+  }
+
   return {
     create,
     listByAmount,
     getTargetById,
     updateTarget,
+    deleteById,
   };
 }
